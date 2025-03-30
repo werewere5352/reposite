@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+:root {
+  --bg-color: #FDF6E3;
+  --card-bg: #FFFFFF; 
+  --text-color: #34495E;
+  --nav-accent-start: #8E44AD;
+  --nav-accent-end: #3498DB;
+  --link-hover-bg: opacity;    
+  --link-hover-text: violet;
+  --transition-duration: 0.4s;
+}
+body.dark-mode {
+  --bg-color: #2C3E50;
+  --card-bg: #34495E;
+  --text-color: #ECF0F1;
+  --nav-accent-start: #387400;
+  --nav-accent-end: #01e0e0;
+  --link-hover-bg: opacity lightblue;
+  --link-hover-text: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding-top: 100px; 
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(45deg, var(--nav-accent-start), var(--nav-accent-end));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.4s;
+  text-decoration: none;
+}
+
+nav a {
+  color: var(--text-color);
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+nav a:hover {
+  background-color: var(--link-hover-bg);
+  color: var(--link-hover-text);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+  gap: 10px;
+}
+.logo-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+}
+.logo-container span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+section {
+  display: none;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 50px;
+  background-color: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-duration) ease, transform var(--transition-duration) ease;
+}
+section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  border-bottom: 3px solid var(--nav-accent-end);
+  padding-bottom: 10px;
+}
+section p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+section ul li {
+  background-color: var(--bg-color);
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid var(--nav-accent-start);
+  transition: background-color var(--transition-duration);
+  font-size: 1rem;
+}
+section ul li:hover {
+  background-color: var(--link-hover-bg);
+}
+footer {
+    text-align: center;
+    padding: 15px; 
+    margin-top: 100px; 
+    background: var(--nav-accent-end);
+    color: var(--bg-color);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+  }
+#impostazioni {
+  background-color: var(--card-bg);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding: 30px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+#impostazioni .settings-option {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#impostazioni label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+}
+#impostazioni select,
+#impostazioni button {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  transition: background-color var(--transition-duration), color var(--transition-duration), border-color var(--transition-duration);
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+#impostazioni button:hover,
+#impostazioni select:hover {
+  border-color: var(--link-hover-bg);
+}
+#impostazioni select:focus,
+#impostazioni button:focus {
+  outline: none;
+  border-color: var(--link-hover-bg);
+}
+a {
+  transition: all var(--transition-duration);
+}
+#contattaci h2 {
+    font-size: large;
+    font-family: 'Lucida Sans';
+}
+#contattaci a {
+    display: flex;
+    background-color: var(--bg-color);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--nav-accent-start);
+    transition: background-color var(--transition-duration);
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+    font-size: medium
+}
+#contattaci a:hover {
+    color: lightseagreen;
+}
